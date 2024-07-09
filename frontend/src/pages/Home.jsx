@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {Nav} from '../components/Nav'
+import AuthModal from '../components/AuthModal';
 
 export const Home = ()=>{
     const [showModal, setShowModal] = useState(false);
@@ -14,12 +15,14 @@ export const Home = ()=>{
     return(
         <>
             <div className="overlay">
-                <Nav minimal={false} authToken={authToken}></Nav>
+                <Nav minimal={false} authToken={authToken} setShowModal = {setShowModal}></Nav>
                 <div className="home">
                     <h1>Swipe Right</h1>
                     <button className="primary-button" onClick={handleclick}>
                         {authToken ? "signin" : "create account"}
                     </button>
+
+                    {showModal && (<AuthModal setShowModal = {setShowModal}  />)}
 
                 </div>
             </div>                

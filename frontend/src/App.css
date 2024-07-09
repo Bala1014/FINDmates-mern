@@ -36,8 +36,22 @@ nav .nav-button{
     position: fixed;
     background: linear-gradient(to bottom, rgb(0,0,0,0.65), rgb(199, 236, 187)) ;
 
+}
 
 
+/* auth modal */
+
+.auth-modal{
+    position: flex;
+    justify-content: center;
+    top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 360px;
+    height: 600px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
 }
 
 
