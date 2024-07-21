@@ -15,17 +15,43 @@ html, body{
     color: #ffff;
     text-transform: uppercase;
     font-size: 15px;
-    background: linear-gradient(45deg, #fe3072, #ff5940);
+    background: linear-gradient(45deg, #F94892, #89CFFD);
     padding: 12px  30px;
     border-radius: 30px;
     border: none;
 }
 
+
 .primary-button:hover{
-    background: linear-gradient(45deg, #ff5940,#fe3072);
+    background: linear-gradient(45deg, #89CFFD,#F94892);
 
 }
 
 body{
     text-align: center;
+}
+
+.secondary-button{
+    color : rgb(121, 119, 119);
+    background-color: white;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: solid 2px;
+    margin: 6px;
+
+}
+
+.secondary-button:hover{
+    color : rgb(48, 48, 48);
+    border: solid 2px ;
+    
+
+}
+
+.primary-title{
+    font-size: 90px;
+    color: white;
 }
