@@ -36,7 +36,7 @@ export const Onboarding = ()=>{
                         
                         <label htmlFor="DOB">birthday</label>
 
-                        <div className="mutli-input-container">
+                        <div className="multi-input-container">
                             <input type="number" id="dob_day"  name="dob_day"
                                 placeholder="DD" required={true} 
                                 value={""}
@@ -56,7 +56,7 @@ export const Onboarding = ()=>{
                         </div>
 
                         <label htmlFor="gender">Gender</label>
-                        <div className="mutli-input-container">
+                        <div className="multi-input-container">
 
                             <input type="radio" id="man-gender-identity"  name="gender"
                                 // placeholder="DD" 
@@ -96,12 +96,77 @@ export const Onboarding = ()=>{
                                 checked={false}
                         />  
 
+                        <label >show me</label>
+                        <div className="multi-input-container">
+
+                            <input type="radio" id="man-gender-interest"  name="roommate-gender-interest"
+                                // placeholder="DD" 
+                                value="man"
+                                onChange={handleChange} 
+                                checked={false}
+                            />  
+                            <label htmlFor="man-gender-interest">man</label>
 
 
+                            <input type="radio" id="women-gender-interest"  name="roommate-gender-interest"
+                                // placeholder="DD" 
+                                value="women"
+                                onChange={handleChange} 
+                                checked={false}
+                            />    
+                            <label htmlFor="women-gender-interest">women</label>
 
-                        // 1"28
+
+                            <input type="radio" id="everyone-gender-interest"  name="roommate-gender-interest"
+                                // placeholder="DD" 
+                                value="everyone"
+                                onChange={handleChange} 
+                                checked={false}
+                            />    
+                            <label htmlFor="evenryone-gender-interest">gay</label>
+
+                               
+
+                        </div>
+
+
+                        <label htmlFor="about">about me</label>
+
+                        <input type="text" id="about"  name="about"
+                                placeholder="ir1807" 
+                            value={""}
+                            required={true}
+                            onChange={handleChange} 
+
+                            // checked={false}
+                        /> 
+
+                        <input type="submit" name="" id="" />   
                         
                     </section>
+
+
+                    <section>
+
+                        <label htmlFor="about">profile photo</label>
+
+                        <input type="url" id="url"  name="img-url1"
+                                // placeholder="ir1807" 
+                            // value={""}
+                            required={true}
+                            onChange={handleChange} 
+
+                            // checked={false}
+                        />    
+                    </section>
+
+                    
+
+
+                    {/* 1:45 */}
+
+
+
                 </form>
             </div>
 

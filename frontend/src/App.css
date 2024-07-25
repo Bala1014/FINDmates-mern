@@ -91,3 +91,76 @@ nav .nav-button:disabled{
 }
 
 
+/* onboarding page */
+
+.onboarding form{
+    display: flex;
+    justify-content: center;
+}
+
+.onboarding form section{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width :40%;
+}
+
+.onboarding form input{
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-size: 15px;
+    border: solid 2px #FBDF07;
+    border-radius: 10px;
+
+
+}
+.onboarding form input::-webkit-outer-spin-button,
+.onboarding form input::-webkit-inner-spin-button{
+    -webkit-appearance:none ;  /*removing the arrow in dob inputs*/
+    margin:0;
+}
+
+/* .onboarding form label{
+    margin: 10px 0;
+}
+ */
+
+
+.onboarding form section .multi-input-container{
+    display: flex;
+    flex-direction:row ;
+    color: pink;
+    /* justify-content: center; */
+}
+
+
+.onboarding form section .multi-input-container input{
+    margin-right: 10px;
+}
+
+
+
+onboarding form section .multi-input-container label.{
+    /* margin-right: 10px;
+     */
+     padding: 10px;
+     border: solid 2px rgb(244,244,244);
+     border-radius: 10px;
+     transition: all 0.5s ;
+     margin-right: 10px;
+
+}
+
+.onboarding form section .multi-input-container input[type="radio"]{
+    display: none;  
+
+}
+
+
+
+
+
+
+
+
+

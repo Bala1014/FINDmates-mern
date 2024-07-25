@@ -1,7 +1,11 @@
 const Dashboard = ()=>{
 
     return(
-        <div>dashboard</div>
+        <>
+            <div>dashboard</div>
+            <input type="text" placeholder="hi" />
+
+        </>
     )
 }
 
