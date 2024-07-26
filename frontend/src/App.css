@@ -103,6 +103,7 @@ nav .nav-button:disabled{
     flex-direction: column;
     padding: 20px;
     width :40%;
+    text-align: start;
 }
 
 .onboarding form input{
@@ -125,26 +126,30 @@ nav .nav-button:disabled{
 }
  */
 
+#dob_month, #dob_day, #dob_year{
+    width: 10%;
+}
+
 
 .onboarding form section .multi-input-container{
     display: flex;
     flex-direction:row ;
-    color: pink;
+    /* color: pink; */
     /* justify-content: center; */
 }
 
 
-.onboarding form section .multi-input-container input{
+ .onboarding form section .multi-input-container input{
     margin-right: 10px;
 }
 
 
 
-onboarding form section .multi-input-container label.{
+.onboarding form section .multi-input-container label{
     /* margin-right: 10px;
      */
      padding: 10px;
-     border: solid 2px rgb(244,244,244);
+     border: solid 2px rgb(7,110, 110);
      border-radius: 10px;
      transition: all 0.5s ;
      margin-right: 10px;
@@ -155,6 +160,21 @@ onboarding form section .multi-input-container label.{
     display: none;  
 
 }
+
+.onboarding form input[type="radio"]:checked + label{
+    border: solid 3px rgb(204, 37, 90);
+
+}
+
+.onboarding form input[type="submit"]:hover{  /*on hover coolor change*/
+    transition: 0.2s;
+    background-color: #FF7F3F;
+}
+.onboarding form input[type="submit"]:active{  /*on lick color change*/
+    transition: 0.2s;
+    background-color: #F94892;
+}
+
 
 
 

@@ -1,14 +1,38 @@
+import { useState } from "react";
 import { Nav } from "../components/Nav"
 
 export const Onboarding = ()=>{
+    const [formData, setFormData] = useState({
+        user_id: '',
+        first_name :'',
+        dob_day:'',
+        dob_month:'',
+        dob_year:'',
+        show_gender:'false',
+        gender:'male',
+        roommate_gender_interest:'women',
+        email:'',
+        img_url1:'',
+        about:'',
+        matches:[]
 
-    const handleChange = ()=>{
-        console.log("njuinw1");
+    })
+
+    const handleChange = (e)=>{  
+        const value = e.target.value;
+        const name = e.target.name;
+
+        
+
+        setFormData((prevState)=>({...prevState, [name]:value}));
+        // console.log("name " + name, "value " + value)
 
     }
+    console.log(formData)
+    const handleChange2 = () => console.log("man ")
 
-    const handleSubmit = ()=>{  
-        console.log("njuinw2");
+    const handleSubmit = ()=>{
+        console.log("submitted")
     }
 
 
@@ -29,7 +53,7 @@ export const Onboarding = ()=>{
                         <label htmlFor="first_name">First Name</label>
                         <input type="text" id="first_name"  name="first_name"
                             placeholder="first name" required={true} 
-                            value={""}
+                            value={formData.first_name}
                             onChange={handleChange}
                         />
 
@@ -39,17 +63,17 @@ export const Onboarding = ()=>{
                         <div className="multi-input-container">
                             <input type="number" id="dob_day"  name="dob_day"
                                 placeholder="DD" required={true} 
-                                value={""}
+                                value={formData.dob_day}
                                 onChange={handleChange} 
                             />    
                             <input type="number" id="dob_month"  name="dob_month"
                                 placeholder="MM" required={true} 
-                                value={""}
+                                value={formData.dob_month}
                                 onChange={handleChange} 
                             />    
                             <input type="number" id="dob_year"  name="dob_year"
                                 placeholder="YYYY" required={true} 
-                                value={""}
+                                value={formData.dob_year}
                                 onChange={handleChange} 
                             />    
 
@@ -99,7 +123,7 @@ export const Onboarding = ()=>{
                         <label >show me</label>
                         <div className="multi-input-container">
 
-                            <input type="radio" id="man-gender-interest"  name="roommate-gender-interest"
+                            <input type="radio" id="man-gender-interest"  name="roommate_gender_interest"
                                 // placeholder="DD" 
                                 value="man"
                                 onChange={handleChange} 
@@ -108,7 +132,7 @@ export const Onboarding = ()=>{
                             <label htmlFor="man-gender-interest">man</label>
 
 
-                            <input type="radio" id="women-gender-interest"  name="roommate-gender-interest"
+                            <input type="radio" id="women-gender-interest"  name="roommate_gender_interest"
                                 // placeholder="DD" 
                                 value="women"
                                 onChange={handleChange} 
@@ -117,13 +141,13 @@ export const Onboarding = ()=>{
                             <label htmlFor="women-gender-interest">women</label>
 
 
-                            <input type="radio" id="everyone-gender-interest"  name="roommate-gender-interest"
+                            <input type="radio" id="everyone-gender-interest"  name="roommate_gender_interest"
                                 // placeholder="DD" 
                                 value="everyone"
                                 onChange={handleChange} 
                                 checked={false}
                             />    
-                            <label htmlFor="evenryone-gender-interest">gay</label>
+                            <label htmlFor="everyone-gender-interest">gay</label>
 
                                
 
@@ -134,7 +158,7 @@ export const Onboarding = ()=>{
 
                         <input type="text" id="about"  name="about"
                                 placeholder="ir1807" 
-                            value={""}
+                            value={formData.about}  
                             required={true}
                             onChange={handleChange} 
 
@@ -148,22 +172,27 @@ export const Onboarding = ()=>{
 
                     <section>
 
-                        <label htmlFor="about">profile photo</label>
+                        <label >profile photo</label>
 
-                        <input type="url" id="url"  name="img-url1"
+                        <input type="url" id="url"  name="img_url1"
                                 // placeholder="ir1807" 
                             // value={""}
                             required={true}
                             onChange={handleChange} 
 
                             // checked={false}
-                        />    
+                        />   
+
+                        <div className="photo-container">
+                            <img src={formData.img_url1} alt="photo preview" />
+                        </div>
+
                     </section>
 
                     
 
 
-                    {/* 1:45 */}
+                    {/* 1:58 */}
 
 
 
