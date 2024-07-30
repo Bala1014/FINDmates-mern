@@ -8,28 +8,23 @@ export const Onboarding = ()=>{
         dob_day:'',
         dob_month:'',
         dob_year:'',
-        show_gender:'false',
-        gender:'male',
-        roommate_gender_interest:'women',
+        show_gender:false,
+        gender:'',
+        roommate_gender_interest:'',
         email:'',
         img_url1:'',
         about:'',
         matches:[]
-
     })
 
     const handleChange = (e)=>{  
-        const value = e.target.value;
         const name = e.target.name;
-
-        
-
+        const value = e.target.value
         setFormData((prevState)=>({...prevState, [name]:value}));
-        // console.log("name " + name, "value " + value)
 
     }
     console.log(formData)
-    const handleChange2 = () => console.log("man ")
+    
 
     const handleSubmit = ()=>{
         console.log("submitted")
@@ -86,7 +81,7 @@ export const Onboarding = ()=>{
                                 // placeholder="DD" 
                                 value="man"
                                 onChange={handleChange} 
-                                checked={false}
+                                checked={formData.gender === 'man'}
                             />  
                             <label htmlFor="man-gender-identity">man</label>
 
@@ -95,7 +90,7 @@ export const Onboarding = ()=>{
                                 // placeholder="DD" 
                                 value="women"
                                 onChange={handleChange} 
-                                checked={false}
+                                checked={formData.gender === 'women'}
                             />    
                             <label htmlFor="women-gender-identity">women</label>
 
@@ -104,7 +99,7 @@ export const Onboarding = ()=>{
                                 // placeholder="DD" 
                                 value="gay"
                                 onChange={handleChange} 
-                                checked={false}
+                                checked={formData.gender === 'gay'}
                             />    
                             <label htmlFor="gay-gender-identity">gay</label>
 
@@ -116,8 +111,11 @@ export const Onboarding = ()=>{
                         <input type="checkbox" id="show-gender"  name="show_gender"
                                 // placeholder="DD"     
                                 // value="gay"
-                                onChange={handleChange} 
-                                checked={false}
+                                onChange={() =>{
+                                    const val = formData.show_gender
+                                    setFormData((prevState)=>({...prevState, ["show_gender"]:!val}));
+                                }} 
+                                checked={formData.show_gender}
                         />  
 
                         <label >show me</label>
@@ -127,7 +125,7 @@ export const Onboarding = ()=>{
                                 // placeholder="DD" 
                                 value="man"
                                 onChange={handleChange} 
-                                checked={false}
+                                checked={formData.roommate_gender_interest === 'man'}
                             />  
                             <label htmlFor="man-gender-interest">man</label>
 
@@ -136,7 +134,7 @@ export const Onboarding = ()=>{
                                 // placeholder="DD" 
                                 value="women"
                                 onChange={handleChange} 
-                                checked={false}
+                                checked={formData.roommate_gender_interest === 'women'}
                             />    
                             <label htmlFor="women-gender-interest">women</label>
 
@@ -145,7 +143,7 @@ export const Onboarding = ()=>{
                                 // placeholder="DD" 
                                 value="everyone"
                                 onChange={handleChange} 
-                                checked={false}
+                                checked={formData.roommate_gender_interest === 'everyone'}
                             />    
                             <label htmlFor="everyone-gender-interest">gay</label>
 

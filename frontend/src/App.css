@@ -175,6 +175,10 @@ nav .nav-button:disabled{
     background-color: #F94892;
 }
 
+.onboarding form .photo-container img{
+    width: 100%;
+}
+
 
 
 
