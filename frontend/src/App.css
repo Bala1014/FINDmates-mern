@@ -180,6 +180,73 @@ nav .nav-button:disabled{
 }
 
 
+/* dashboard */
+
+.dashboard{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard .swipe-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+    
+.swipe {
+    position: absolute;
+}
+  
+.dashboard  .card-container {
+    width: 400px;
+    /* max-width: 260px; */
+    height: 650px;
+  }
+  
+  .card {
+    /* position: relative; */
+    /* background-color: #fff; */
+    /* width: 80vw;
+    max-width: 260px;
+    height: 300px; */
+    width: 400px;
+    height: 650px;
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+.infoText {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    /* color: #fff; */
+    animation-name: popup;
+    animation-duration: 800ms;
+}
+
+.card .h3{
+    margin-top: 0;
+
+}
+
+
+.dashboard .swipe-info{
+    position: absolute;
+    bottom: 0;
+    padding: 50px;
+}
+
+
+/* chat container */
+
+
 
 
 
