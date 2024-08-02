@@ -246,6 +246,73 @@ nav .nav-button:disabled{
 
 /* chat container */
 
+.chat-container{
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.30) 0px 6px 24px  0px,
+    rgba(0,0,0,0.30) 0px 0px 0px 1px;
+    width: 30%;
+    text-align: left;
+    z-index: 1;
+
+}
+
+.chat-container .chat-contianer-header{
+    background: linear-gradient(45deg, rgb(213,121,12), rgb(72,91,221)) ;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-container .option{
+    border: none;
+    background-color: white;
+    border-bottom: solid 4px red;
+
+    font-size: 20px;
+    margin: 2px;
+    padding: 10px;
+
+} 
+
+.chat-container .option:disabled{
+    border-bottom: solid 4px grey;
+}
+
+.chat-container .log-out-icon,
+.chat-container .profile{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.img-container{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+/* chat display */
+
+.chat-display{
+    padding: 20px;
+    height: 60vh;
+    overflow-y: auto;
+
+}
+
+.chat-input{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
 
 
 
