@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Nav } from "../components/Nav"
+import { useCookies } from "react-cookie";
+
 
 export const Onboarding = ()=>{
+    const [cookies, setCookie, removeCookie] = useCookies(null);
+
     const [formData, setFormData] = useState({
-        user_id: '',
+        // user_id: '',
         first_name :'',
         dob_day:'',
         dob_month:'',
@@ -11,7 +15,7 @@ export const Onboarding = ()=>{
         show_gender:false,
         gender:'',
         roommate_gender_interest:'',
-        email:'',
+        // email:'',
         img_url1:'',
         about:'',
         matches:[]

@@ -31,10 +31,10 @@ const AuthModal = ({setShowModal, signUp, setSignUp})=>{
                 return
             }
 
-            const response = await axios.post('http://localhost:8001/signup', {email, password});
+            const response = await axios.post(`http://localhost:8001/${signUp?'signup':'login'}`, {email, password});
             
-            setCookie('Email' , response.data.email)
-            setCookie('UserId' , response.data.userId);
+            // setCookie('Email' , response.data.email)
+            // setCookie('UserId' , response.data.userId);
             setCookie('authToken', response.data.token)
 
 
@@ -42,8 +42,11 @@ const AuthModal = ({setShowModal, signUp, setSignUp})=>{
 
             const success = response.status === 201;
 
-            if(success){
+            if(success && signUp){
                 navigate('/onboarding')
+            }
+            if(success && !signUp){
+                navigate('/dashboard')
             }
 
         }catch(error){

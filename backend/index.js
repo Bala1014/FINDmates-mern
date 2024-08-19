@@ -50,9 +50,38 @@ app.post('/signup',async (req,res)=>{
             expiresIn : 60 * 24
         })
 
-        res.status(201).json({token, userId: generatedUserId, email: sanitizedEmail});
+        res.status(201).json({token});
 
 
+    }catch(err){
+        console.log(err);
+    }
+})
+
+app.post('/login', async (req,res)=>{
+    const client = new MongoClient(uri);
+    const {email, password} = req.body;
+
+    console.log(email, password);
+
+
+    try{
+        await client.connect()
+        const database = client.db('app-data');
+        const users = database.collection('users');
+
+        const user = await users.findOne({email});
+        
+
+        if(user && (await bcrypt.compare(password, user.hashed_password))){
+            console.log("yes")
+            const token = jwt.sign(user, email, {
+                expiresIn:60*24
+            })
+
+            res.status(201).json({token})
+        }
+        res.status(400).send('invalid Cred')
     }catch(err){
         console.log(err);
     }
@@ -82,5 +111,5 @@ app.listen(port, ()=>{
 })
 
 
-// 3.07
+// 3.19
 
