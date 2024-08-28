@@ -34,7 +34,7 @@ const AuthModal = ({setShowModal, signUp, setSignUp})=>{
             const response = await axios.post(`http://localhost:8001/${signUp?'signup':'login'}`, {email, password});
             
             // setCookie('Email' , response.data.email)
-            // setCookie('UserId' , response.data.userId);
+            setCookie('UserId' , response.data.userId);
             setCookie('authToken', response.data.token)
 
 

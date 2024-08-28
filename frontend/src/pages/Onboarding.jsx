@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { Nav } from "../components/Nav"
 import { useCookies } from "react-cookie";
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios';
+
+
 
 
 export const Onboarding = ()=>{
     const [cookies, setCookie, removeCookie] = useCookies(null);
 
+    let navigate = useNavigate();
+
     const [formData, setFormData] = useState({
-        // user_id: '',
+        user_id: cookies.UserId,
         first_name :'',
         dob_day:'',
         dob_month:'',
@@ -30,8 +36,19 @@ export const Onboarding = ()=>{
     console.log(formData)
     
 
-    const handleSubmit = ()=>{
+    const handleSubmit = async(e)=>{
         console.log("submitted")
+        e.preventDefault() // prevent from relaoding
+        
+        try{
+            const response = await axios.put('http://localhost:8001/user', {formData})
+
+            const success = response.status == 201
+
+            if(success)navigate('/dashboard');
+        }catch(err){
+            console.log(err);
+        }
     }
 
 
@@ -167,7 +184,7 @@ export const Onboarding = ()=>{
                             // checked={false}
                         /> 
 
-                        <input type="submit" name="" id="" />   
+                        <input type="submit" />   
                         
                     </section>
 
