@@ -27,7 +27,7 @@ const AuthModal = ({setShowModal, signUp, setSignUp})=>{
         e.preventDefault();
         try{
             if(signUp && (password !== confirmPassword)){
-                setError("U FKIN CUNT!!! passwords do not match ")
+                setError("passwords do not match ")
                 return
             }
 
